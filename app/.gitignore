@@ -1,0 +1,13 @@
+# Gradle Files
+.gradle/
+build/
+
+# Android Studio Files
+*.iml
+.idea/
+
+# Mac OS X clutter
+.DS_Store
+
+# Windows clutter
+Thumbs.db
