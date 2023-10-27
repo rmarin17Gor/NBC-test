@@ -11,7 +11,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 abstract class CoroutinesScopesModule {
-
     @Singleton
     @ApplicationScope
     @Binds

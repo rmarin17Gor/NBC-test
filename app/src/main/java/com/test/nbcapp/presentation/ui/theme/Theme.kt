@@ -115,3 +115,7 @@ object NBCAppTheme {
 val Dimens: Dimensions
     @Composable
     get() = NBCAppTheme.dimens
+
+val AppColors: Colors
+    @Composable
+    get() = NBCAppTheme.colors
