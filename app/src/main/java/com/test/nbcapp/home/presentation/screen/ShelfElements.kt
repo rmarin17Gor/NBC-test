@@ -39,7 +39,7 @@ fun ShowReviewElement(
             verticalAlignment = Alignment.CenterVertically
         ) {
             ShelfTitle(modifier, showUiModel.title)
-            Spacer(modifier = modifier.weight(1f))
+            Spacer(modifier = modifier.weight(1f).fillMaxHeight())
             NBCLogo(modifier)
         }
     }
@@ -64,7 +64,7 @@ fun LiveReviewElement(
                 ShelfTitle(modifier, liveUiModel.title)
                 ShelfSubTitle(modifier, liveUiModel.subTitle)
             }
-            Spacer(modifier = modifier.weight(1f))
+            Spacer(modifier = modifier.weight(1f).fillMaxHeight())
             NBCLogo(modifier)
         }
     }
@@ -87,7 +87,7 @@ fun EpisodeReviewElement(
         ) {
             Column() {
                 ShelfTitle(modifier, episodeUiModel.title)
-                Spacer(modifier = Modifier.weight(1f).fillMaxHeight())
+                Spacer(modifier = modifier.weight(1f).fillMaxHeight())
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         modifier = modifier.padding(Dimens.grid_0_5),

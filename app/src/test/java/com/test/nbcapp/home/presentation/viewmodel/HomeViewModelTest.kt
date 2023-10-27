@@ -9,12 +9,18 @@ import com.test.nbcapp.home.domain.model.ShelfSection
 import com.test.nbcapp.home.presentation.model.ShelfUiModel
 import com.test.nbcapp.home.presentation.model.ShowUiModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
 import org.junit.After
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito.verify
+import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 
 /**
@@ -53,19 +59,22 @@ class HomeViewModelTest {
         closeable.close()
     }
 
-    /*
     @Test
-    fun `given a map of shelves, when loadShelves is called, then check state equals LoadShelves`() = runTest(contextProvider.IO) {
+    fun `given a map of shelves, when loadShelves is called, then check last state equals LoadShelves`() = runTest(contextProvider.IO) {
         // GIVEN
+        val results = mutableListOf<HomeViewState>()
         val mockShelves = mockShelves()
         `when`(shelvesInteractor.getShelves()).thenReturn(mockShelves)
+        val job = launch(contextProvider.IO) { viewModel.viewState.toList(results) }
+
         // WHEN
         viewModel.loadShelves()
+        runCurrent()
+
         // THEN
-        viewModel.viewState.collectLatest { viewState ->
-            assertTrue(viewState is HomeViewState.LoadShelves)
-        }
-    }*/
+        assertTrue(results.last() is HomeViewState.LoadShelves)
+        job.cancel()
+    }
 
     @Test
     fun `given an error, when onErrorAction is called, then check logs error message with the Logger`() {
