@@ -19,6 +19,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+/**
+ * File that handle all the functions related to the App theme.
+ */
+
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
@@ -29,16 +33,6 @@ private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
 )
 
 @Composable
@@ -67,7 +61,6 @@ private val LocalAppColors = staticCompositionLocalOf {
 @Composable
 fun NBCAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -91,11 +84,12 @@ fun NBCAppTheme(
     }
     val configuration = LocalConfiguration.current
     val dimensions = if (configuration.screenWidthDp <= 360) smallDimensions else sw360Dimensions
+    val typography = if (configuration.screenWidthDp <= 360) smallTypography else sw360Typography
     ProvideDimens(dimensions = dimensions) {
         ProvideAppColors(colors = colors) {
             MaterialTheme(
                 colorScheme = colorScheme,
-                typography = sw360Typography,
+                typography = typography,
                 content = content
             )
         }

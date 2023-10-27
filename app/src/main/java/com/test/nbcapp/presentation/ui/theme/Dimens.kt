@@ -3,6 +3,10 @@ package com.test.nbcapp.presentation.ui.theme
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * File that handle all the Dimens values in the app.
+ */
+
 class Dimensions(
     val grid_0_25: Dp,
     val grid_0_5: Dp,

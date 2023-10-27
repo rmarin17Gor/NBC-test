@@ -37,7 +37,7 @@ class HomeViewModel @Inject constructor(
         logger.logMessage(this.javaClass.name, error.localizedMessage.orEmpty(), ERROR)
     }
 
-    fun loadShelves() {
+    private fun loadShelves() {
         _viewState.value = Loading
         viewModelScope.launch(coroutineContext.IO) {
             val shelves = shelvesInteractor.getShelves()
