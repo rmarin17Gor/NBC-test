@@ -3,8 +3,8 @@ package com.test.nbcapp.common.viewmodel
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.ViewModel
 import com.test.nbcapp.common.coroutine.CoroutineContextProvider
-import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel(
     val baseContextProvider: CoroutineContextProvider

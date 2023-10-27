@@ -7,4 +7,4 @@ data class LiveUiModel(
     override val title: String,
     override val imageUrl: String,
     val subTitle: String
-): ShelfUiModel
+) : ShelfUiModel

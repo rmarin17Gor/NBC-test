@@ -13,13 +13,13 @@ import javax.inject.Inject
  * Class that handle the implementation of ShelvesInteractor.
  */
 class ShelvesInteractorImpl @Inject constructor(
-    private val homeRepositoryImpl: HomeRepository,
+    private val homeRepository: HomeRepository,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : ShelvesInteractor {
 
     override suspend fun getShelves(): Map<ShelfSection, MutableList<ShelfUiModel>> {
         return withContext(ioDispatcher) {
-            homeRepositoryImpl.getShelvesData().toListShelfUiModel()
+            homeRepository.getShelvesData().toListShelfUiModel()
         }
     }
 }

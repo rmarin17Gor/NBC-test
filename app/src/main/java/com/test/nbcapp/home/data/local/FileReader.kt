@@ -12,7 +12,7 @@ import javax.inject.Inject
  */
 class FileReader @Inject constructor(
     private val logger: Logger,
-    @ApplicationContext private val context: Context,
+    @ApplicationContext private val context: Context
 ) {
 
     fun loadJsonDataFromFileAsset(fileName: String): String? {
@@ -22,7 +22,7 @@ class FileReader @Inject constructor(
             logger.logMessage(
                 this.javaClass.name,
                 ioException.localizedMessage.orEmpty(),
-                Level.ERROR,
+                Level.ERROR
             )
             null
         }

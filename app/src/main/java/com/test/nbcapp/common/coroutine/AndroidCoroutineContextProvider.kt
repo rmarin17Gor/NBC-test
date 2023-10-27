@@ -4,9 +4,9 @@ import com.test.nbcapp.di.DefaultDispatcher
 import com.test.nbcapp.di.IoDispatcher
 import com.test.nbcapp.di.MainDispatcher
 import com.test.nbcapp.di.MainImmediateDispatcher
+import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
-import kotlinx.coroutines.CoroutineDispatcher
 
 class AndroidCoroutineContextProvider @Inject constructor(
     @MainDispatcher mainDispatcher: CoroutineDispatcher,

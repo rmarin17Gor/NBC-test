@@ -6,4 +6,4 @@ package com.test.nbcapp.home.presentation.model
 data class ShowUiModel(
     override val title: String,
     override val imageUrl: String
-): ShelfUiModel
+) : ShelfUiModel

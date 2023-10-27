@@ -15,7 +15,6 @@ val Indigo = Color(0xFF500053)
 val White = Color(0xFFFAFAFA)
 val White_Smoke = Color(0xFFF5F5F5)
 
-
 class Colors(
     val Background_Search: Color,
     val Background_Gradient_Top: Color,

@@ -57,7 +57,7 @@ fun HomeScreen(
                 brush = Brush.verticalGradient(
                     colors = listOf(
                         AppColors.Background_Gradient_Top,
-                        AppColors.Background_Gradient_Bottom,
+                        AppColors.Background_Gradient_Bottom
                     )
                 )
             ),
@@ -66,7 +66,6 @@ fun HomeScreen(
         val viewState by homeViewModel.viewState.collectAsStateWithLifecycle()
         when (viewState) {
             is HomeViewState.Loading -> LoadingScreen(modifier)
-            is HomeViewState.Failure -> Unit
             is HomeViewState.LoadShelves -> RenderHomeScreen(
                 modifier,
                 (viewState as? HomeViewState.LoadShelves)?.shelves
@@ -108,7 +107,6 @@ fun RenderHomeScreen(
             }
         }
     }
-
 }
 
 @Composable

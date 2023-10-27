@@ -10,9 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.test.nbcapp.home.presentation.screen.HomeScreen
-import com.test.nbcapp.home.presentation.viewmodel.HomeViewModel
 import com.test.nbcapp.presentation.ui.theme.NBCAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
